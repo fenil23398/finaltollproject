@@ -29,6 +29,37 @@ router.post('/',function(req,res){
         else
             res.json(req.body);
     })
-})
+});
+
+router.delete('/:id',function(req,res){
+    
+    vj.deleteVehicle(req.params.id,function(err,count){
+     
+        if(err)
+            {
+                  res.json(err);
+            }
+         else
+            {
+                 res.json(count);
+            }
+     
+         });
+});
+
+router.put('/:id',function(req,res){
+         
+        vj.updateVehicle(req.params.id,req.body,function(err,rows){
+       
+        if(err)
+          {
+          res.json(err);
+          }
+          else
+          {
+          res.json(rows);
+          }
+          });
+ });
 
 module.exports=router;
