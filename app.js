@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var userlogin=require('./routes/userlogin_router');
 var userss =require('./routes/user_router');
 var vehicle_type=require('./routes/vehicle_type_router');
 var vehicle=require('./routes/vehicle_router');
@@ -14,6 +15,7 @@ var vehicle_user=require('./routes/vehicle_byuser');
 var payment_method=require('./routes/paymentmethod_router');
 var payment=require('./routes/payment_router');
 var payment_user=require('./routes/payment_user');
+var tollplaza=require('./routes/tollplaza_router');
 var app = express();
 
 // view engine setup
@@ -36,7 +38,9 @@ app.use('/vehicle_user',vehicle_user);
 app.use('/payment_method',payment_method);
 app.use('/payment',payment);
 app.use('/payment_user',payment_user);
-// catch 404 and forward to error handler
+app.use('/tollplaza',tollplaza);
+app.use('/userlogin',userlogin);
+  
 app.use(function(req, res, next) {
   next(createError(404));
 });
