@@ -14,6 +14,7 @@ var vehicle_user=require('./routes/vehicle_byuser');
 var payment_method=require('./routes/paymentmethod_router');
 var payment=require('./routes/payment_router');
 var payment_user=require('./routes/payment_user');
+var tollplaza=require('./routes/tollplaza_router');
 var app = express();
 
 // view engine setup
@@ -36,6 +37,7 @@ app.use('/vehicle_user',vehicle_user);
 app.use('/payment_method',payment_method);
 app.use('/payment',payment);
 app.use('/payment_user',payment_user);
+app.use('/tollplaza',tollplaza);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
