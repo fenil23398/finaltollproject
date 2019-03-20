@@ -6,6 +6,7 @@ var userss={
     },
     getUsersById:function(id,callback){
         return db.query("select * from user where user_id=?",[id],callback);
+<<<<<<< HEAD
     },
     adduser:function(userss,callback)
     {
@@ -15,6 +16,8 @@ var userss={
     {
         console.log("select * from user where user_email=? and user_password=?",[userss.user_email,userss.user_password]);
         return db.query("select * from user where user_email=? and user_password=?",[userss.user_email,userss.user_password],callback);
+=======
+>>>>>>> 69f666655d1420c820870393bd2e550b882798f2
     }
 
 }
