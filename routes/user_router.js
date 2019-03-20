@@ -22,4 +22,20 @@ router.get('/:id?', function(req, res) {
         });
     }
 });
+<<<<<<< HEAD
+router.post('/',function(req,res,next){
+    Users.adduser(req.body,function(err,rows){
+      if(err)
+      {
+        res.json(err);
+      }
+      else{
+        res.json(req.body);
+      }
+  
+    });
+      
+  });
+=======
+>>>>>>> 69f666655d1420c820870393bd2e550b882798f2
 module.exports=router;

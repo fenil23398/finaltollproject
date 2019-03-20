@@ -29,6 +29,41 @@ router.post('/',function(req,res){
         else
             res.json(req.body);
     })
+<<<<<<< HEAD
 })
+=======
+});
+
+router.delete('/:id',function(req,res){
+    
+    vj.deleteVehicle(req.params.id,function(err,count){
+     
+        if(err)
+            {
+                  res.json(err);
+            }
+         else
+            {
+                 res.json(count);
+            }
+     
+         });
+});
+
+router.put('/:id',function(req,res){
+         
+        vj.updateVehicle(req.params.id,req.body,function(err,rows){
+       
+        if(err)
+          {
+          res.json(err);
+          }
+          else
+          {
+          res.json(rows);
+          }
+          });
+ });
+>>>>>>> 69f666655d1420c820870393bd2e550b882798f2
 
 module.exports=router;
