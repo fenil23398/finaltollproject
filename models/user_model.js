@@ -13,7 +13,7 @@ var userss={
     },
     userlogin:function(userss,callback)
     {
-        console.log("select * from user where user_email=? and user_password=?",[userss.user_email,userss.user_password]);
+   
         return db.query("select * from user where user_email=? and user_password=?",[userss.user_email,userss.user_password],callback);
     }
 

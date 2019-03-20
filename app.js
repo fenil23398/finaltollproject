@@ -16,6 +16,7 @@ var payment_method=require('./routes/paymentmethod_router');
 var payment=require('./routes/payment_router');
 var payment_user=require('./routes/payment_user');
 var tollplaza=require('./routes/tollplaza_router');
+var toll=require('./routes/toll_router');
 var app = express();
 
 // view engine setup
@@ -40,7 +41,7 @@ app.use('/payment',payment);
 app.use('/payment_user',payment_user);
 app.use('/tollplaza',tollplaza);
 app.use('/userlogin',userlogin);
-  
+app.use('/tolldetail',toll);
 app.use(function(req, res, next) {
   next(createError(404));
 });
