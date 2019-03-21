@@ -19,6 +19,8 @@ var tollplaza=require('./routes/tollplaza_router');
 var toll=require('./routes/toll_router');
 var connect=require('./routes/connect_router');
 var nearlocations=require('./routes/near_location_router');
+var transaction=require('./routes/transaction_router');
+var transactionuser=require('./routes/transcationuser_router');
 var app = express();
 
 // view engine setup
@@ -46,6 +48,8 @@ app.use('/userlogin',userlogin);
 app.use('/tolldetail',toll);
 app.use('/connect',connect);
 app.use('/nearlocations',nearlocations);
+app.use('/transaction',transaction);
+app.use('/transactionuser',transactionuser);
 app.use(function(req, res, next) {
   next(createError(404));
 });
