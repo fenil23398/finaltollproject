@@ -13,6 +13,7 @@ var payment={
         return db.query("select pd.*,pt.*,u.* from payment_detail pd,payment_method pt,user u where pd.method_id=pt.method_id and pd.user_id=u.user_id and u.user_id=?",[id],callback);
     },
     updatePaymentById:function(pay,callback){
+        // console.log("update payment_detail set user_id=?,method_id=?,card_no=?,expiry_month=?,expiry_year=?,card_name=? where payment_id=?",[pay.user_id,pay.method_id,pay.card_no,pay.expiry_month,pay.expiry_year,pay.card_name,pay.payment_id]);
         return db.query("update payment_detail set user_id=?,method_id=?,card_no=?,expiry_month=?,expiry_year=?,card_name=? where payment_id=?",[pay.user_id,pay.method_id,pay.card_no,pay.expiry_month,pay.expiry_year,pay.card_name,pay.payment_id],callback);
     },
     deletePaymentId:function(id,callback){
