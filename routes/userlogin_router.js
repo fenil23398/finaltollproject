@@ -17,14 +17,14 @@ router.post('/',function(req,res,next){
     });
       
   });
+  router.get('/:useremail', function(req, res) {
 
-  router.put('/',function(req,res){
-    Users.updateUser(req.body,function(err,rows){
-        if(err)
-            res.json(err);
-        else
-            res.json(rows);
-    })
-  });
-
+        Users.userEmailMatch(req.params.useremail, function(err, rows) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(rows);
+            }
+        })
+});
   module.exports=router;

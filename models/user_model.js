@@ -11,6 +11,9 @@ var userss={
     {
         return db.query("Insert into user values(?,?,?,?,?)",[userss.user_id,userss.user_name,userss.user_password,userss.user_email,userss.contact_no],callback);
     },
+    userEmailMatch:function(useremail,callback){
+        return db.query("select user_email from user where user_email=?",[useremail],callback);
+    },
     userlogin:function(userss,callback)
     {
    
