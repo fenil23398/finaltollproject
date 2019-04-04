@@ -29,10 +29,8 @@ router.post('/',function(req,res){
         else
             res.json(req.body);
     })
-<<<<<<< HEAD
-})
-=======
 });
+
 
 router.delete('/:id',function(req,res){
     
@@ -64,6 +62,5 @@ router.put('/:id',function(req,res){
           }
           });
  });
->>>>>>> 69f666655d1420c820870393bd2e550b882798f2
 
 module.exports=router;
