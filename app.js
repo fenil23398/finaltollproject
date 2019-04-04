@@ -17,6 +17,7 @@ var payment=require('./routes/payment_router');
 var payment_user=require('./routes/payment_user');
 var tollplaza=require('./routes/tollplaza_router');
 var toll=require('./routes/toll_router');
+var mail=require('./routes/mailRouter');
 var connect=require('./routes/connect_router');
 var nearlocations=require('./routes/near_location_router');
 var transaction=require('./routes/transaction_router');
@@ -49,6 +50,8 @@ app.use('/tolldetail',toll);
 app.use('/connect',connect);
 app.use('/nearlocations',nearlocations);
 app.use('/transaction',transaction);
+app.use('/mail',mail)
+
 app.use('/transactionuser',transactionuser);
 app.use(function(req, res, next) {
   next(createError(404));
