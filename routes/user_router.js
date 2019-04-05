@@ -43,6 +43,6 @@ router.post('/',function(req,res,next){
         else
             res.json(rows);
     })
-  });
+  });s
   
 module.exports=router;
