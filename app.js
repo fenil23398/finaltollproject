@@ -8,6 +8,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var userlogin=require('./routes/userlogin_router');
+var userpassword=require('./routes/user_password_router');
 var userss =require('./routes/user_router');
 var vehicle_type=require('./routes/vehicle_type_router');
 var vehicle=require('./routes/vehicle_router');
@@ -48,6 +49,7 @@ app.use('/payment',payment);
 app.use('/payment_user',payment_user);
 app.use('/tollplaza',tollplaza);
 app.use('/userlogin',userlogin);
+app.use('/userpassword',userpassword)
 app.use('/tolldetail',toll);
 app.use('/connect',connect);
 app.use('/nearlocations',nearlocations);
