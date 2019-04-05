@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Users = require('../models/user_model');
-
+var otp=require('../models/sendotp_model');
 router.get('/:id?', function(req, res) {
 
     if (req.params.id) {
@@ -23,16 +23,18 @@ router.get('/:id?', function(req, res) {
     }
 });
 router.post('/',function(req,res,next){
-    Users.adduser(req.body,function(err,rows){
-      if(err)
-      {
-        res.json(err);
-      }
-      else{
-        res.json(req.body);
-      }
+    // otp.sendMail()
+
+    // Users.adduser(req.body,function(err,rows){
+    //   if(err)
+    //   {
+    //     res.json(err);
+    //   }
+    //   else{
+    //     res.json(req.body);
+    //   }
   
-    });
+    // });
       
   });
 
