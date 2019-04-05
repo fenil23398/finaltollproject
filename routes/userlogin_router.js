@@ -38,19 +38,7 @@ router.get('/:id?', function(req, res) {
       });
   }
 });
-router.put('/:id',function(req,res,next){
- 
-  Users.updatepassword(req.params.id,req.body,function(err,rows){
-      if(err)
-      {
-          res.json(err);
-      }
-      else
-      {
-          res.json(rows);
-      }
-  });
-});
+
 //   router.get('/:useremail', function(req, res) {
 
 //         Users.userEmailMatch(req.params.useremail, function(err, rows) {
@@ -61,4 +49,25 @@ router.put('/:id',function(req,res,next){
 //             }
 //         })
 // });
+
+
+  // router.get('/:useremail',function(req,res){
+  //   Users.userEmailMatch(req.params.useremail,function(err,rows){
+  //     if(err){
+  //       res.json(err);
+  //     }
+  //     else
+  //     res.json(rows);
+  //   })
+  // });
+
+  router.put('/',function(req,res){
+    Users.updateUser(req.body,function(err,rows){
+        if(err)
+            res.json(err);
+        else
+            res.json(rows);
+    })
+  });
+  
   module.exports=router;

@@ -21,7 +21,7 @@ var userss = {
         return db.query("select user_email from user where user_email=?", [email], callback);
     },
     updatepassword: function (mail, hashpassword, callback) {
-
+        
         return db.query("update user set user_password=? where user_email=?", [hashpassword.user_password, mail], callback);
     },
     userEmailMatch:function(useremail,callback){
@@ -31,6 +31,12 @@ var userss = {
     {
    
         return db.query("select * from user where user_email=? and user_password=?",[userss.user_email,userss.user_password],callback);
+    },
+    updateUser:function(userss,callback){
+        return db.query("update user set user_name=? ,contact_no=? where user_id=?",[userss.user_name,userss.contact_no,userss.user_id],callback);
+    },
+    changePassword:function(pass,id,callback){
+        return db.query("update user set user_password=? where user_id=?",[pass,id],callback);
     }
 
 }
