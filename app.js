@@ -12,9 +12,17 @@ var userss =require('./routes/user_router');
 var vehicle_type=require('./routes/vehicle_type_router');
 var vehicle=require('./routes/vehicle_router');
 var vehicle_user=require('./routes/vehicle_byuser');
+var vehiclebyid=require('./routes/vehicle_route');
 var payment_method=require('./routes/paymentmethod_router');
 var payment=require('./routes/payment_router');
 var payment_user=require('./routes/payment_user');
+var tollplaza=require('./routes/tollplaza_router');
+var toll=require('./routes/toll_router');
+var mail=require('./routes/mailRouter');
+var connect=require('./routes/connect_router');
+var nearlocations=require('./routes/near_location_router');
+var transaction=require('./routes/transaction_router');
+var transactionuser=require('./routes/transcationuser_router');
 var app = express();
 
 // view engine setup
@@ -33,12 +41,20 @@ app.use('/users', usersRouter);
 app.use('/userss',userss);
 app.use('/vehicle_type',vehicle_type);
 app.use('/vehicles',vehicle);
+app.use('/vehiclebyid',vehiclebyid);
 app.use('/vehicle_user',vehicle_user);
 app.use('/payment_method',payment_method);
 app.use('/payment',payment);
 app.use('/payment_user',payment_user);
+app.use('/tollplaza',tollplaza);
 app.use('/userlogin',userlogin);
-// catch 404 and forward to error handler
+app.use('/tolldetail',toll);
+app.use('/connect',connect);
+app.use('/nearlocations',nearlocations);
+app.use('/transaction',transaction);
+app.use('/mail',mail)
+
+app.use('/transactionuser',transactionuser);
 app.use(function(req, res, next) {
   next(createError(404));
 });
