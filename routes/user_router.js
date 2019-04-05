@@ -31,21 +31,18 @@ router.post('/',function(req,res,next){
             });
          }
          else{
-
-         }
+              Users.adduser(req.body,function(err,rows){
+                    if(err)
+                    {
+                        res.json(err);
+                    }
+                    else{
+                        res.json(req.body);
+                    }
+                
+            });
+        }
      })
-
-    // Users.adduser(req.body,function(err,rows){
-    //   if(err)
-    //   {
-    //     res.json(err);
-    //   }
-    //   else{
-    //     res.json(req.body);
-    //   }
-  
-    // });
-      
   });
   
 

@@ -22,7 +22,7 @@ var obj = {
             from: 'GPSBased TOLL COLLECTION SYSTEM', // sender address
             to: obj.user_email, // list of receivers
             subject: "Otp Verification", // Subject line
-            text:"please Note down your" + otp  ,// plain text body
+            text:"please Note down your Otp is " + otp  ,// plain text body
             html: obj.text // html body
         };
         let info = await transporter.sendMail(mailOptions,callback);
