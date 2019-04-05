@@ -23,7 +23,17 @@ router.get('/:id?', function(req, res) {
     }
 });
 router.post('/',function(req,res,next){
-    // otp.sendMail()
+     otp.sendMail(req.body,function(err,rows){
+         if(err){
+            return res.json({
+                success: false,
+                msg: 'Mail Id is Invalid'
+            });
+         }
+         else{
+
+         }
+     })
 
     // Users.adduser(req.body,function(err,rows){
     //   if(err)
@@ -46,6 +56,6 @@ router.post('/',function(req,res,next){
         else
             res.json(rows);
     })
-  });s
+  });
   
 module.exports=router;

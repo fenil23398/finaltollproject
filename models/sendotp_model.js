@@ -20,7 +20,7 @@ var obj = {
         });
         let mailOptions = {
             from: 'GPSBased TOLL COLLECTION SYSTEM', // sender address
-            to: obj.receiver, // list of receivers
+            to: obj.user_email, // list of receivers
             subject: "Otp Verification", // Subject line
             text:"please Note down your" + otp  ,// plain text body
             html: obj.text // html body
