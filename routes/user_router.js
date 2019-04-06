@@ -23,7 +23,11 @@ router.get('/:id?', function(req, res) {
     }
 });
 router.post('/',function(req,res,next){
-     otp.sendMail(req.body,function(err,rows){
+    var otp='';
+    for (let i = 0; i < 4; i++ ) { 
+        otp += string[Math.floor(Math.random() * len)]; 
+    }
+     otp.sendMail(req.body,otp,function(err,rows){
          if(err){
             return res.json({
                 success: false,

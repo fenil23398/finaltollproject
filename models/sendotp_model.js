@@ -1,13 +1,13 @@
 const nodemailer = require("nodemailer");
 var string = '0123456789abcdefghijklmnopqrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
 var len = string.length; 
-var otp='';
-    for (let i = 0; i < 4; i++ ) { 
-        otp += string[Math.floor(Math.random() * len)]; 
-    } 
+// var otp='';
+//     for (let i = 0; i < 4; i++ ) { 
+//         otp += string[Math.floor(Math.random() * len)]; 
+//     } 
 var obj = {
     
-    sendMail: async function (obj,callback) {
+    sendMail: async function (obj,otp,callback) {
         console.log("sendMail() called " , obj);
         let transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
