@@ -7,9 +7,9 @@ var userss = {
     getUsersById:function(id,callback){
         return db.query("select * from user where user_id=?",[id],callback);
     },
-    adduser: function (userss, callback) {
+    adduser: function (userss,otp,callback) {
         var time=new Date().toLocaleTimeString();
-        return db.query("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no, userss.user_otp,time, 0], callback);
+        return db.query("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,time, 0], callback);
     },
     userlogin: function (userss, callback) {
         console.log(userss);

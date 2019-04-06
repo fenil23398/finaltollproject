@@ -37,7 +37,7 @@ router.post('/',function(req,res,next){
             });
          }
          else{
-              Users.adduser(req.body,function(err,rows){
+              Users.adduser(req.body,otpp,function(err,rows){
                     if(err)
                     {
                         res.json(err);
