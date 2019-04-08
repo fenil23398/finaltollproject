@@ -24,16 +24,7 @@ router.get('/:id?', function(req, res) {
 });
 router.post('/',function(req,res,next){
 
-    Users.adduser(req.body,function(err,rows){
-      if(err)
-      {
-        res.json(err);
-      }
-      else{
-        res.json(req.body);
-      }
-  
-    });
+   
       
     var string = '0123456789abcdefghijklmnopqrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
     var len = string.length;    
@@ -49,6 +40,7 @@ router.post('/',function(req,res,next){
             });
          }
          else{
+             
               Users.adduser(req.body,otpp,function(err,rows){
                     if(err)
                     {
