@@ -23,6 +23,7 @@ router.get('/:id?', function(req, res) {
     }
 });
 router.post('/',function(req,res,next){
+
     Users.adduser(req.body,function(err,rows){
       if(err)
       {
