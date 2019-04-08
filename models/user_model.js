@@ -38,6 +38,40 @@ var userss = {
     },
     changePassword:function(pass,id,callback){
         return db.query("update user set user_password=? where user_id=?",[pass,id],callback);
+    },
+    verifyUser:function(email,callback){
+        var time=new Date().toLocaleTimeString(); //current time
+        var arr=time.split(":");
+        var min=parseInt(arr[1]);
+        if(min=>0 && min<15)
+        {
+            min=min-0;
+            min=60-(15-min);
+            if(arr[0]==0)
+            arr[0]=11;
+            else
+            arr[0]=arr[0]-1;
+        }
+        //get the column result suppose dat reult column name is timeotp
+        var timeotp="6:19:33 PM";
+        var arrverify=timeotp.split(":");
+        if(arrverify[1]>=45 && arrverify[1]<60)
+        arrverify[1]=arrverify[1]-15;
+
+        if(arrverify[1]-min<15)
+        {
+           // dn do call otp match function
+        }
+        else{
+            //update otp function called & notify user to verify otp
+        }
+        return db.query("select otp_timestamp from user where user_email=?",[email],callback);
+    },
+    getTimeOtp(otp,email){
+        return db.query("select * from user where user_otp=? and user_email=?"[otp,email],callback);
+    },
+    updateStatus(email){
+        return db.query("update user set verify=1 where user_email=?",[email],callabck);
     }
 
 }
