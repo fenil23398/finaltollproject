@@ -5,6 +5,7 @@ var mysql = require('mysql');
 //     password: '',
 //     database: 'toll_collection'    
 // });
+
 var cnn = mysql.createPool({
     host:'db4free.net',
     user:'se_team_2',
