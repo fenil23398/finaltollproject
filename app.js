@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var userlogin=require('./routes/userlogin_router');
 var userpassword=require('./routes/user_password_router');
 var userss =require('./routes/user_router');
+var verifyuser=require('./routes/verifyuser_router');
+var resendotp=require('./routes/resendotp_router')
 var vehicle_type=require('./routes/vehicle_type_router');
 var vehicle=require('./routes/vehicle_router');
 var vehicle_user=require('./routes/vehicle_byuser');
@@ -54,7 +56,9 @@ app.use('/tolldetail',toll);
 app.use('/connect',connect);
 app.use('/nearlocations',nearlocations);
 app.use('/transaction',transaction);
-app.use('/mail',mail)
+app.use('/mail',mail);
+app.use('/verifyuser',verifyuser);
+app.use('/resendotp',resendotp);
 
 app.use('/transactionuser',transactionuser);
 app.use(function(req, res, next) {
