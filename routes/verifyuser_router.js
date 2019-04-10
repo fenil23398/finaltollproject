@@ -4,28 +4,38 @@ var Users = require('../models/user_model');
 
 router.get('/:otp/:id', function (req, res) {
 
+    //console.log("lkajsdlkajsdljasd    "+Users.verifyUser('parth.soni0210@gmail.com',1234));
     Users.verifyUser(req.params.id, req.params.otp, function (err, rows) {
+        console.log(rows[0]);
+
         if (err) {
             console.log("error in verify user");
             res.json(err);
         }
         else {
 
+            if (rows[0] === undefined) {
+                console.log('Not Valid otp');
+                var resu = { result: "false in otp " };
+                return res.json(resu);
+            } else {
+                console.log('success');
+                Users.updateStatus(req.params.id, function (err, row) {
+                    if (err) {
+                        var resu = { result: "false" };
+                        return res.json(resu);
+                    }
+                    else {
+                        var resu = { result: "true" };
+                        return res.json(resu);
+                    }
+                });
+            }
 
 
-            Users.updateStatus(req.params.id, function (err, row) {
-                if (err) {
-                    var resu = { result: "false " };
-                    return res.json(resu);
-                }
-                else {
-                    var resu = { result: "udpate user status" };
-                    return res.json(resu);
-                }
-            });
         }
 
-    
+
 
 
     });

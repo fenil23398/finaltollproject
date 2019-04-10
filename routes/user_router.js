@@ -3,7 +3,6 @@ var router = express.Router();
 var Users = require('../models/user_model');
 var otp=require('../models/sendotp_model');
 router.get('/:id?', function(req, res) {
-
     if (req.params.id) {
         Users.getUsersById(req.params.id, function(err, rows) {
             if (err) {
@@ -23,7 +22,7 @@ router.get('/:id?', function(req, res) {
     }
 });
 router.post('/',function(req,res,next){
-
+console.log("successfully reached");
    
       
     var string = '0123456789abcdefghijklmnopqrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
@@ -44,15 +43,17 @@ router.post('/',function(req,res,next){
               Users.adduser(req.body,otpp,function(err,rows){
                     if(err)
                     {
+                        console.log(err);
                         res.json(err);
                     }
                     else{
+                        console.log(req.body);
                         res.json(req.body);
                     }
                 
             });
         }
-     })
+     });
   });
   
 
