@@ -8,6 +8,8 @@ var cnn = mysql.createPool({
     // user:'root',
     // password:'',
     // database:'toll_collection1'  
+
+    
 });
 module.exports = cnn;
 
