@@ -8,10 +8,9 @@ var userss = {
         return db.query("select * from user where user_id=?",[id],callback);
     },
     adduser: function (userss,otp,callback) {
-        // var time=new Date().toLocaleTimeString();
-        // var time=new Date();
-        
-        return db.query("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,null, 0], callback);
+        console.log("otp ",otp);
+        console.log("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,userss.otp_timestamp, 0]);
+        return db.query("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,userss.otp_timestamp, 0], callback);
     },
     userlogin: function (userss, callback) {
         console.log(userss);
@@ -39,6 +38,7 @@ var userss = {
         return db.query("update user set user_name=? ,contact_no=? where user_id=?",[userss.user_name,userss.contact_no,userss.user_id],callback);
     },
     changePassword:function(pass,id,callback){
+        // console.log("dfjlsdf");
         return db.query("update user set user_password=? where user_id=?",[pass,id],callback);
     },
     verifyUser:function(email,otp,callback){  
