@@ -11,9 +11,9 @@ router.get('/:id?',function(req,res){
                     else{
                         res.json(rows);
                     }
-                });
+                })
           }
-    })
+    });
     
 
 module.exports=router;
