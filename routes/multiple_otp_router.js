@@ -12,7 +12,6 @@ router.get('/:id?',function(req,res){
                         res.json(err);
                     }
                     else{
-                        console.log(count);
                        
                         if(result.length>0)
                         {
@@ -25,10 +24,10 @@ router.get('/:id?',function(req,res){
                         else{
                             return res.json({
                                 msg:'no data'
-                                
+
                               });
                         }
-                        ;
+                        
                     }
                 })
           }
