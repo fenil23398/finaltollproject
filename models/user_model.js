@@ -9,8 +9,8 @@ var userss = {
     },
     adduser: function (userss,otp,callback) {
         console.log("otp ",otp);
-        console.log("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,userss.otp_timestamp, 0]);
-        return db.query("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,userss.otp_timestamp, 0], callback);
+        console.log("Insert into user values(?,?,?,?,?,?,CURRENT_TIMESTAMP,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no, 0]);
+        return db.query("Insert into user values(?,?,?,?,?,?,CURRENT_TIMESTAMP,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no, 0], callback);
     },
     userlogin: function (userss, callback) {
         console.log(userss);
