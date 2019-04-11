@@ -6,3 +6,4 @@ var cnn = mysql.createPool({
     database:'toll_collection1'  
 });
 module.exports = cnn;
+
