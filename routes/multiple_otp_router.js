@@ -7,24 +7,25 @@ router.get('/:id?',function(req,res){
     // while(i<req.params.id){
     var val = Math.floor(1000 + Math.random() * 900000);
     if(req.params.id){
-                motp.verifyotp(req.params.id,function(err,rows){
+                motp.verifyotp(req.params.id,function(err,result){
                     if(err){
                         res.json(err);
                     }
                     else{
                         console.log(count);
                        
-                        if(rows.length==0)
+                        if(result.length>0)
                         {
                             return res.json({
-                              msg:'no data'
+
+                                msg: 'data'
                             });
+                            
                         }
                         else{
                             return res.json({
-                                
-                                msg: 'data'
-                            });
+                                msg:'no data'
+                              });
                         }
                         ;
                     }
