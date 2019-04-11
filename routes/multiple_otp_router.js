@@ -28,6 +28,7 @@ router.get('/:id?',function(req,res){
                             }
                             if(f==0){
                                 i++;
+                                
                                 arr.push(val);
                             }
                             
