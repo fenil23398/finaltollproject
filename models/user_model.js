@@ -54,7 +54,7 @@ var userss = {
     },
     resendotp(otp,email,callback)
     {
-        return db.query("update user set user_otp=? , otp_timestamp=? where user_email=?",[otp,null,email],callback);
+        return db.query("update user set user_otp=? , otp_timestamp=CURRENT_TIMESTAMP where user_email=?",[otp,email],callback);
     }
 
 }

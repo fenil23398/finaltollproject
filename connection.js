@@ -5,5 +5,6 @@ var cnn = mysql.createPool({
     password:'nopassword1234',
     database:'toll_collection1'  
 });
+
 module.exports = cnn;
 
