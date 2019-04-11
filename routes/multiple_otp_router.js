@@ -3,11 +3,12 @@ var router = express.Router();
 var motp = require('../models/multiple_otp');
 
 router.get('/:id?',function(req,res){
-    // var i=0;
-    // while(i<req.params.id){
+    var i=0;
+    var arr=[];
+     while(i<req.params.id){
     var val = Math.floor(1000 + Math.random() * 900000);
-    if(req.params.id){
-                motp.verifyotp(req.params.id,function(err,result){
+        var f=0;
+                motp.verifyotp(val,function(err,result){
                     if(err){
                         res.json(err);
                     }
@@ -15,10 +16,14 @@ router.get('/:id?',function(req,res){
                        
                         if(result.length>0)
                         {
-                            return res.json({
-
-                                msg: 'data'
-                            });
+                            for(var j=0;j<arr.length;j++){
+                                if(val==arr[j])
+                                f=1;
+                            }
+                            if(f==0){
+                                i++;
+                                arr.push(val);
+                            }
                             
                         }
                         else{
@@ -30,8 +35,10 @@ router.get('/:id?',function(req,res){
                         
                     }
                 })
-          }
-        // }
+          
+         
+         }
+         res.json(arr);
     });
     
 
