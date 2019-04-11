@@ -13,6 +13,7 @@ router.get('/:id?',function(req,res){
                     }
                     else{
                         console.log(count);
+                        res.json(count);
                         // if(count=="[]")
                         // {
                         //     return res.json({
