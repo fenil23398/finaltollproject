@@ -16,7 +16,13 @@ router.get('/:id?',function(req,res){
                        
                         if(result.length>0)
                         {
-                            for(var j=0;j<arr.length;j++){
+                            return res.json({
+                                msg:'number Exist'
+                              });
+                        }
+                        else{
+                           
+                              for(var j=0;j<arr.length;j++){
                                 if(val==arr[j])
                                 f=1;
                             }
@@ -25,11 +31,6 @@ router.get('/:id?',function(req,res){
                                 arr.push(val);
                             }
                             
-                        }
-                        else{
-                            return res.json({
-                                msg:'no data'
-                              });
                         }
                         
                     }
