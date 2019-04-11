@@ -12,6 +12,7 @@ router.get('/:id?',function(req,res){
                         res.json(err);
                     }
                     else{
+                        console.log(rows);
                         if(rows=="[]")
                         {
                             return res.json({
