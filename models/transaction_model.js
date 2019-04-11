@@ -6,7 +6,7 @@ var trans={
    },
    addTransaction:function(tt,callabck){
        console.log("Transcation insert");
-       consolole.log("insert into transaction values(?,?,?,?,?,?,?,?,?,?)",[null,tt.user_id,tt.payment_id,tt.vehicle_no,tt.toll_plaza_id,tt.transaction_date,tt.transaction_time,tt.status,tt.amount,tt.isreturn]);
+       console.log("insert into transaction values(?,?,?,?,?,?,?,?,?,?)",[null,tt.user_id,tt.payment_id,tt.vehicle_no,tt.toll_plaza_id,tt.transaction_date,tt.transaction_time,tt.status,tt.amount,tt.isreturn]);
         return db.query("insert into transaction values(?,?,?,?,?,?,?,?,?,?,?,?,?)",[null,tt.user_id,tt.payment_id,tt.vehicle_no,tt.toll_plaza_id,tt.transaction_date,tt.transaction_time,tt.status,tt.amount,tt.isreturn,tt.isValid,tt.otp,tt.isPasses],callabck);
    },
    getTransactionById:function(id,callback){
