@@ -10,7 +10,7 @@ var userss = {
     adduser: function (userss,otp,callback) {
         // var time=new Date().toLocaleTimeString();
         // var time=new Date();
-        console.log("hello adduser");
+        
         return db.query("Insert into user values(?,?,?,?,?,?,?,?)", [userss.user_id, userss.user_name, userss.user_email, userss.user_password, userss.contact_no,otp,null, 0], callback);
     },
     userlogin: function (userss, callback) {
@@ -46,7 +46,7 @@ var userss = {
         // return db.query("select otp_timestamp from user where user_email=?",[email],callback);
     },
     getTimeOtp(otp,email,callback){
-       console.log('select * from user where user_otp=? and user_email=?',otp,email);
+       
         return db.query('select * from user where user_otp=? and user_email=?',[otp,email],callback);
     },
     updateStatus(email,callback){
