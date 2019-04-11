@@ -12,19 +12,18 @@ router.get('/:id?',function(req,res){
                         res.json(err);
                     }
                     else{
-                        // if(res=="[]")
-                        // {
-                        //     return res.json({
-                        //       msg:'no data'
-                        //     });
-                        // }
-                        // else{
-                        //     return res.json({
-                        //         msg: 'data'
-                        //     });
-                        // }
-                        console.log(rows);
-                        res.json(rows);
+                        if(rows=="[]")
+                        {
+                            return res.json({
+                              msg:'no data'
+                            });
+                        }
+                        else{
+                            return res.json({
+                                msg: 'data'
+                            });
+                        }
+                        ;
                     }
                 })
           }
