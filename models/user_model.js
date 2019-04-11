@@ -18,6 +18,7 @@ var userss = {
     },
     user_verify: function (id, callback) {
         return db.query("update user set verify=1 where user_email=?", [id], callback);
+        
     },
     getUsersByEmail: function (email, callback) {
         return db.query("select user_email from user where user_email=?", [email], callback);
