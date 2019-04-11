@@ -24,6 +24,7 @@ router.get('/:id?',function(req,res){
                         //     });
                         // }
                         console.log(res);
+                        
                         res.json(res);
                     }
                 })
