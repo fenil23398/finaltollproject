@@ -7,13 +7,13 @@ router.get('/:id?',function(req,res){
     // while(i<req.params.id){
     var val = Math.floor(1000 + Math.random() * 900000);
     if(req.params.id){
-                motp.verifyotp(val,function(err,rows){
+                motp.verifyotp(val,function(err,count){
                     if(err){
                         res.json(err);
                     }
                     else{
-                        console.log(rows);
-                        if(rows=="[]")
+                        console.log(count);
+                        if(count=="[]")
                         {
                             return res.json({
                               msg:'no data'
