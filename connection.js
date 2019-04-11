@@ -1,12 +1,4 @@
 var mysql = require('mysql');
-// var cnn = mysql.createPool({
-//     host: 'localhost',
-//     user: 'root',
-//     password: '',
-//     database: 'toll_collection'    
-// });
-
-
 var cnn = mysql.createPool({
     host:'db4free.net',
     user:'se_team_2',
