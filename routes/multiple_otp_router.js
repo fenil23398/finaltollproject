@@ -22,6 +22,7 @@ router.get('/:id?',function(req,res){
                         }
                         else{
                             return res.json({
+                                
                                 msg: 'data'
                             });
                         }
