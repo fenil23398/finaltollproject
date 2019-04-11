@@ -9,7 +9,17 @@ router.get('/:id?',function(req,res){
                         res.json(err);
                     }
                     else{
-                        res.json(rows);
+                        if(res=="[]")
+                        {
+                            return res.json({
+                              msg:'no data'
+                            });
+                        }
+                        else{
+                            return res.json({
+                                msg: 'data'
+                            });
+                        }
                     }
                 })
           }
