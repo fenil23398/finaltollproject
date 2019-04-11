@@ -23,9 +23,8 @@ router.get('/:id?',function(req,res){
                         //         msg: 'data'
                         //     });
                         // }
-                        console.log(res);
-                        
-                        res.json(res);
+                        console.log(rows);
+                        res.json(rows);
                     }
                 })
           }
