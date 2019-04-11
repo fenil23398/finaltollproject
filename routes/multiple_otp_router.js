@@ -13,18 +13,18 @@ router.get('/:id?',function(req,res){
                     }
                     else{
                         console.log(count);
-                        if(count=="[]")
-                        {
-                            return res.json({
-                              msg:'no data'
-                            });
-                        }
-                        else{
-                            return res.json({
-                                msg: 'data'
-                            });
-                        }
-                        ;
+                        // if(count=="[]")
+                        // {
+                        //     return res.json({
+                        //       msg:'no data'
+                        //     });
+                        // }
+                        // else{
+                        //     return res.json({
+                        //         msg: 'data'
+                        //     });
+                        // }
+                        // ;
                     }
                 })
           }
