@@ -31,18 +31,7 @@ console.log("successfully reached");
     for (let i = 0; i < 4; i++ ) { 
         otpp += string[Math.floor(Math.random() * len)]; 
     }
-    Users.adduser(req.body,otpp,function(err,rows){
-        if(err)
-        {
-            console.log(err);
-            res.json(err);
-        }
-        else{
-            console.log(req.body);
-            res.json(req.body);
-        }
-    
-});
+ 
      otp.sendMail(req.body,otpp,function(err,rows){
          if(err){
             return res.json({
