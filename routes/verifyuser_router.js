@@ -13,7 +13,6 @@ router.get('/:otp/:id', function (req, res) {
             res.json(err);
         }
         else {
-
             if (rows.length <1 ) {
                 console.log('Not Valid otp');
                 var resu = { result: "false in otp " };
