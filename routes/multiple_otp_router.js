@@ -13,8 +13,6 @@ router.get('/:id?',function(req,res){
                         res.json(err);
                     }
                     else{
-                        
-                       
                         if(result.length>0)
                         {
                             f=1;
