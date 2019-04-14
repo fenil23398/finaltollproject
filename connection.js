@@ -4,6 +4,7 @@ var cnn = mysql.createPool({
     user:'se_team_2',
     password:'nopassword1234',
     database:'toll_collection1'
+    
   
 //    host: 'localhost',
 //     user: 'root',
