@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 var cnn = mysql.createPool({
     host:'db4free.net',
-    user:'se_team_2',
-    password:'nopassword1234',
-    database:'toll_collection'
+    user:'se_team',
+    password:'nopassword@123',
+    database:'toll_collections'
     
   
 //    host: 'localhost',
