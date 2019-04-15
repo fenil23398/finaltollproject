@@ -23,14 +23,14 @@ router.get('/:rs', function (req, res) {
                 "items": [{
                     "name": "item",
                     "sku": "item",
-                    "price": "rs",
+                    "price": req.params.rs,
                     "currency": "INR",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "INR",
-                "total": "rs"
+                "total": req.params.rs
             },
             "description": "This is the payment description."
         }]
