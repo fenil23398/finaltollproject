@@ -43,6 +43,7 @@ router.get('/', function (req, res) {
         } else {
             console.log("Create Payment Response");
             console.log(payment);
+            res.json(payment);
         }
     });
 });
