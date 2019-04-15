@@ -8,7 +8,7 @@ paypal.configure({
     'client_secret': 'ECqbbgdb90a3WrklptMWpjA8oYtgcZ93YnCcUJ7KX84TQX-ReHuAJvl3KiKkPtWWSvam9SX-hGdekVqB'
 });
 
-router.get('/createPayment', function (req, res) {
+router.get('/', function (req, res) {
     var create_payment_json = {
         "intent": "sale",
         "payer": {
