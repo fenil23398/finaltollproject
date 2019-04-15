@@ -27,7 +27,8 @@ var nearlocations=require('./routes/near_location_router');
 var transaction=require('./routes/transaction_router');
 var transactionuser=require('./routes/transcationuser_router');
 var motp=require('./routes/multiple_otp_router');
-var cities=require('./routes/citypath')
+var cities=require('./routes/citypath');
+var payment=require('./routes/paypal');
 var app = express();
 
 // view engine setup
@@ -63,7 +64,7 @@ app.use('/verifyuser',verifyuser);
 app.use('/resendotp',resendotp);
 app.use('/motps',motp);
 app.use('/cities',cities);
-
+app.use('/createPayment',payment);
 app.use('/transactionuser',transactionuser);
 app.use(function(req, res, next) {
   next(createError(404));
