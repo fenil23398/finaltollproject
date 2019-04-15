@@ -8,7 +8,7 @@ paypal.configure({
     'client_secret': 'ECqbbgdb90a3WrklptMWpjA8oYtgcZ93YnCcUJ7KX84TQX-ReHuAJvl3KiKkPtWWSvam9SX-hGdekVqB'
 });
 
-router.get('/', function (req, res) {
+router.get('/:rs', function (req, res) {
     var create_payment_json = {
         "intent": "sale",
         "payer": {
@@ -23,14 +23,14 @@ router.get('/', function (req, res) {
                 "items": [{
                     "name": "item",
                     "sku": "item",
-                    "price": "1",
-                    "currency": "USD",
+                    "price": "rs",
+                    "currency": "INR",
                     "quantity": 1
                 }]
             },
             "amount": {
-                "currency": "USD",
-                "total": "1"
+                "currency": "INR",
+                "total": "rs"
             },
             "description": "This is the payment description."
         }]
@@ -39,7 +39,7 @@ router.get('/', function (req, res) {
 
     paypal.payment.create(create_payment_json, function (error, payment) {
         if (error) {
-            throw error;
+            res.json(error);
         } else {
             console.log("Create Payment Response");
             console.log(payment);
