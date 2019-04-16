@@ -6,8 +6,8 @@ router.get('/:lat/:lon',function(req,res){
      var result=[];
     var l1=req.params.lat;
     var l2=req.params.lon;
-    l1=l1.substring(0,4);
-    l2=l2.substring(0,4);
+    l1=l1.substring(0,5);
+    l2=l2.substring(0,5);
     nl.getLocations(function(err,rows){
             if(err){
                 res.json(err);
@@ -17,8 +17,8 @@ router.get('/:lat/:lon',function(req,res){
                for(var i=0;i<rows.length;i++){
                 var lats=String(rows[i].latitude);
                 var lons=String(rows[i].longitude);
-                lats=lats.substring(0,4);
-                lons=lons.substring(0,4);
+                lats=lats.substring(0,5);
+                lons=lons.substring(0,5);
                
                     if(lats==l1 || lons==l2){
                         var obj={'latitude':lats,'longitude':lons};
