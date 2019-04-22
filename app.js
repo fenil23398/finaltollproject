@@ -50,6 +50,7 @@ app.use('/vehicles',vehicle);
 app.use('/vehiclebyid',vehiclebyid);
 app.use('/vehicle_user',vehicle_user);
 app.use('/payment_method',payment_method);
+
 app.use('/payment',payment);
 app.use('/payment_user',payment_user);
 app.use('/tollplaza',tollplaza);

@@ -40,7 +40,7 @@ var userss = {
     },
     changePassword:function(pass,id,callback){
         // console.log("dfjlsdf");
-        return db.query("update user set user_password=? where user_id=?",[pass,id],callback);
+        return db.query("update user set user_password=? where user_email=?",[pass,id],callback);
     },
     
     verifyUser:function(email,otp,callback){  
